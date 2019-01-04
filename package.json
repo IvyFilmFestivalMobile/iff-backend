@@ -1,0 +1,22 @@
+{
+  "name": "iff-backend",
+  "version": "1.0.0",
+  "description": "🖥 Backend for Ivy Film Festival",
+  "main": "fetchEvents.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvyFilmFestivalMobile/iff-backend.git"
+  },
+  "author": "Yusuf Karim",
+  "license": "(Unlicense)",
+  "bugs": {
+    "url": "https://github.com/IvyFilmFestivalMobile/iff-backend/issues"
+  },
+  "homepage": "https://github.com/IvyFilmFestivalMobile/iff-backend#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  }
+}
