@@ -16,13 +16,20 @@ async function callEventsAPI() {
         .then(res => res.json())
         .then(json => {
             return json;
-        });
+        }); //TODO: Error handling
 }
 
 async function fetchEvents(event) {
+    let lastId = event.lastId;
     return new Promise((resolve, reject) => {
         callEventsAPI().then((eventData) => {
-            resolve(eventData); 
+            if (lastId !== undefined) {
+                let filteredEvents = eventData.events
+                    .filter(event => parseInt(event.id) > parseInt(lastId));
+                resolve({events: filteredEvents});
+            } else {
+                resolve({events: eventData.events}); //TODO: proper response format
+            }
         }).catch(reject);
      });
 }
