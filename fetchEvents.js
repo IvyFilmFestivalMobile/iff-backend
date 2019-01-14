@@ -23,7 +23,7 @@ async function fetchEvents(event) {
     let lastId = event.lastId;
     return new Promise((resolve, reject) => {
         callEventsAPI().then((eventData) => {
-            if (lastId !== undefined) {
+            if (lastId !== undefined && lastId != "") {
                 let filteredEvents = eventData.events
                     .filter(event => parseInt(event.id) > parseInt(lastId));
                 resolve({events: filteredEvents});
